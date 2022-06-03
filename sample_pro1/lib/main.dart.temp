@@ -1,0 +1,154 @@
+// import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, prefer_const_literals_to_create_immutables, sort_child_properties_last
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(myApp());
+}
+
+class myApp extends StatelessWidget {
+  const myApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.greenAccent),
+      home: homeScreen(),
+    );
+  }
+}
+
+class homeScreen extends StatelessWidget {
+  const homeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: duplicate_ignore
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 237, 238, 229),
+      // ignore: prefer_const_constructors
+      appBar: AppBar(title: Text("ProtoType")),
+      body: SafeArea(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: Container(
+                // width: double.infinity,
+                // height: double.infinity,
+                color: Colors.cyan[200],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Prototype",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.indigo,
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                            onPressed: () {
+                              print('text button clicked');
+                            },
+                            child: Text('Click Me',
+                                style: TextStyle(color: Colors.indigo))),
+                        IconButton(
+                            onPressed: () {
+                              print("Icon button clicked");
+                            },
+                            icon: Icon(Icons.mic)),
+                      ],
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        print('elevated button clicked');
+                      },
+                      child: Text(
+                        'Click here',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )
+                  ],
+                )),
+            flex: 2,
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.circular(45),
+                  border: Border.all(
+                      color: Colors.black38,
+                      width: 10,
+                      style: BorderStyle.solid)),
+              child: Center(
+                  child: Text(
+                "Sample Decoration",
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              )),
+            ),
+            flex: 1,
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+                // width: double.infinity,
+                // height: double.infinity,
+                color: Colors.indigoAccent,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Prototype",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                            onPressed: () {
+                              print('text button clicked');
+                            },
+                            child: Text('Click Me',
+                                style: TextStyle(
+                                    color:
+                                        Color.fromARGB(255, 255, 255, 255)))),
+                        IconButton(
+                            onPressed: () {
+                              print("Icon button clicked");
+                            },
+                            icon: Icon(Icons.mic)),
+                      ],
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        print('elevated button clicked');
+                      },
+                      child: Text(
+                        'Click here',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )
+                  ],
+                )),
+          )
+        ],
+      )),
+    );
+  }
+}
